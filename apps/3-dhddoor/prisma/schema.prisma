@@ -6,3 +6,11 @@ datasource db {
 generator client {
   provider = "prisma-client-js"
 }
+
+model Productimage {
+  createdAt  DateTime @default(now())
+  id         String   @id @default(cuid())
+  image      Json?
+  singletone Boolean
+  updatedAt  DateTime @updatedAt
+}
