@@ -5,6 +5,10 @@ import { theme } from "./theme/theme";
 import Login from "./Login";
 import "./App.scss";
 import Dashboard from "./pages/Dashboard";
+import { ProductimageList } from "./productimage/ProductimageList";
+import { ProductimageCreate } from "./productimage/ProductimageCreate";
+import { ProductimageEdit } from "./productimage/ProductimageEdit";
+import { ProductimageShow } from "./productimage/ProductimageShow";
 import { jwtAuthProvider } from "./auth-provider/ra-auth-jwt";
 
 const App = (): React.ReactElement => {
@@ -30,7 +34,15 @@ const App = (): React.ReactElement => {
         theme={theme}
         dashboard={Dashboard}
         loginPage={Login}
-      ></Admin>
+      >
+        <Resource
+          name="Productimage"
+          list={ProductimageList}
+          edit={ProductimageEdit}
+          create={ProductimageCreate}
+          show={ProductimageShow}
+        />
+      </Admin>
     </div>
   );
 };
